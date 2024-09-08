@@ -30,7 +30,21 @@ class _LoginPageScreenState extends State<LoginPageScreen> {
                   ],
                 ),
               ),
-              Padding(
+              Container(
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(30),
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Color(0xFF39828c),
+                      spreadRadius: 15,
+
+                      offset: Offset(0, 9), // Menempatkan bayangan ke bawah
+                    ),
+                  ],
+                ),
                 padding: const EdgeInsets.all(16.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -40,8 +54,9 @@ class _LoginPageScreenState extends State<LoginPageScreen> {
                       child: Text(
                         'Masuk dengan akun anda',
                         style: TextStyle(
+                          fontFamily: 'OpenSans',
                           fontSize: 24,
-                          fontWeight: FontWeight.bold,
+                          fontWeight: FontWeight.w700,
                         ),
                       ),
                     ),
@@ -51,9 +66,22 @@ class _LoginPageScreenState extends State<LoginPageScreen> {
                         labelText: 'Username',
                         hintText: 'Masukkan Username',
                         border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10),
-                            borderSide: BorderSide(
-                                color: Color.fromARGB(255, 238, 109, 45))),
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Color.fromARGB(
+                                255, 238, 109, 45), // Warna oranye untuk border
+                          ),
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Color.fromARGB(
+                                255, 238, 109, 45), // Warna oranye ketika fokus
+                          ),
+                          borderRadius: BorderRadius.circular(10),
+                        ),
                       ),
                     ),
                     SizedBox(height: 16),
@@ -63,9 +91,22 @@ class _LoginPageScreenState extends State<LoginPageScreen> {
                         labelText: 'Password',
                         hintText: 'Masukkan Password',
                         border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10),
-                            borderSide: BorderSide(
-                                color: Color.fromARGB(255, 238, 109, 45))),
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Color.fromARGB(
+                                255, 238, 109, 45), // Warna oranye untuk border
+                          ),
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Color.fromARGB(
+                                255, 238, 109, 45), // Warna oranye ketika fokus
+                          ),
+                          borderRadius: BorderRadius.circular(10),
+                        ),
                         suffixIcon: Icon(Icons.visibility_off),
                       ),
                     ),
@@ -79,12 +120,26 @@ class _LoginPageScreenState extends State<LoginPageScreen> {
                               value: false,
                               onChanged: (value) {},
                             ),
-                            Text('Ingat saya'),
+                            Text(
+                              'Ingat saya',
+                              style: TextStyle(
+                                  fontFamily: 'OpenSans',
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 16),
+                            ),
                           ],
                         ),
                         TextButton(
                           onPressed: () {},
-                          child: Text('Lupa password?'),
+                          child: Text('Lupa password?',
+                              style: TextStyle(
+                                fontFamily: 'OpenSans',
+                                fontWeight: FontWeight.w600,
+                                fontSize: 16,
+                              )),
+                          style: TextButton.styleFrom(
+                              foregroundColor:
+                                  Color.fromARGB(255, 238, 109, 45)),
                         ),
                       ],
                     ),
@@ -93,22 +148,31 @@ class _LoginPageScreenState extends State<LoginPageScreen> {
                       width: double.infinity,
                       height: 50,
                       child: ElevatedButton(
-                          onPressed: () {},
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: Color.fromARGB(
-                                255, 238, 109, 45), // Warna oranye
-                          ),
-                          child: Text(
-                            'Masuk',
-                            style: TextStyle(color: Colors.white),
-                          )),
+                        onPressed: () {},
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Color.fromARGB(255, 238, 109, 45),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10)),
+                        ),
+                        child: Text(
+                          'Masuk',
+                          style: TextStyle(
+                              fontFamily: 'OpenSans',
+                              fontSize: 16,
+                              fontWeight: FontWeight.w700,
+                              color: Colors.white),
+                        ),
+                      ),
                     ),
                     SizedBox(height: 16),
                     Center(
                       child: Text(
                         'atau masuk dengan',
                         style: TextStyle(
-                          color: Colors.grey,
+                          fontFamily: 'OpenSans',
+                          fontWeight: FontWeight.w400,
+                          color: Colors.black,
+                          fontSize: 16,
                         ),
                       ),
                     ),
@@ -128,6 +192,9 @@ class _LoginPageScreenState extends State<LoginPageScreen> {
                         ),
                       ),
                     ),
+                    SizedBox(
+                        height:
+                            32), // Menambahkan ruang di bawah untuk bayangan
                   ],
                 ),
               ),

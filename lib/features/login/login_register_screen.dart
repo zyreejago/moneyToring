@@ -48,8 +48,9 @@ class _LoginScreenState extends State<LoginRegisterScreen> {
                       child: Text(
                         'Daftar',
                         style: TextStyle(
-                            // fontFamily: 'OpenSans',
-                            // fontWeight: FontWeight.bold,
+                            fontFamily: 'OpenSans',
+                            fontWeight: FontWeight.w700,
+                            fontSize: 16,
                             color: Colors.white),
                       ),
                     ),
@@ -75,8 +76,9 @@ class _LoginScreenState extends State<LoginRegisterScreen> {
                       child: Text(
                         'Masuk',
                         style: TextStyle(
-                          // fontFamily: 'OpenSans',
-                          // fontWeight: FontWeight.bold,
+                          fontFamily: 'OpenSans',
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
                           color: Color.fromARGB(255, 238, 109, 45),
                         ),
                       ),
@@ -89,8 +91,8 @@ class _LoginScreenState extends State<LoginRegisterScreen> {
               Text(
                 'atau masuk dengan',
                 style: TextStyle(
-                  // fontFamily: 'OpenSans',
-                  // fontWeight: FontWeight.w400,
+                  fontFamily: 'OpenSans',
+                  fontWeight: FontWeight.w400,
                   color: Colors.black,
                   fontSize: 16,
                 ),
