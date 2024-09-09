@@ -8,6 +8,8 @@ class LoginPageScreen extends StatefulWidget {
 }
 
 class _LoginPageScreenState extends State<LoginPageScreen> {
+  bool _obscureText = true; // Untuk mengatur visibilitas password
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,7 +19,7 @@ class _LoginPageScreenState extends State<LoginPageScreen> {
           child: Column(
             children: [
               Container(
-                color: Color(0xFF39828c), // Warna biru hijau di bagian atas
+                color: Color(0xFF39828c),
                 height: 200,
                 width: double.infinity,
                 child: Column(
@@ -61,53 +63,87 @@ class _LoginPageScreenState extends State<LoginPageScreen> {
                       ),
                     ),
                     SizedBox(height: 24),
+                    // Bagian Username
+                    Text(
+                      'Username',
+                      style: TextStyle(
+                        fontFamily: 'OpenSans',
+                        fontSize: 16,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                    SizedBox(height: 8),
                     TextField(
                       decoration: InputDecoration(
-                        labelText: 'Username',
                         hintText: 'Masukkan Username',
+                        hintStyle: TextStyle(
+                            fontFamily: 'OpenSans',
+                            fontSize: 14,
+                            fontWeight: FontWeight.w400),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),
                         enabledBorder: OutlineInputBorder(
                           borderSide: BorderSide(
-                            color: Color.fromARGB(
-                                255, 238, 109, 45), // Warna oranye untuk border
+                            color: Color.fromARGB(255, 238, 109, 45),
                           ),
                           borderRadius: BorderRadius.circular(10),
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
-                            color: Color.fromARGB(
-                                255, 238, 109, 45), // Warna oranye ketika fokus
+                            color: Color.fromARGB(255, 238, 109, 45),
                           ),
                           borderRadius: BorderRadius.circular(10),
                         ),
                       ),
                     ),
                     SizedBox(height: 16),
+                    // Bagian Password
+                    Text(
+                      'Password',
+                      style: TextStyle(
+                        fontFamily: 'OpenSans',
+                        fontSize: 16,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                    SizedBox(height: 8),
                     TextField(
-                      obscureText: true,
+                      obscureText: _obscureText,
                       decoration: InputDecoration(
-                        labelText: 'Password',
                         hintText: 'Masukkan Password',
+                        hintStyle: TextStyle(
+                            fontFamily: 'OpenSans',
+                            fontSize: 14,
+                            fontWeight: FontWeight.w400),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),
                         enabledBorder: OutlineInputBorder(
                           borderSide: BorderSide(
-                            color: Color.fromARGB(
-                                255, 238, 109, 45), // Warna oranye untuk border
+                            color: Color.fromARGB(255, 238, 109, 45),
                           ),
                           borderRadius: BorderRadius.circular(10),
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
-                            color: Color.fromARGB(
-                                255, 238, 109, 45), // Warna oranye ketika fokus
+                            color: Color.fromARGB(255, 238, 109, 45),
                           ),
                           borderRadius: BorderRadius.circular(10),
                         ),
-                        suffixIcon: Icon(Icons.visibility_off),
+                        suffixIcon: IconButton(
+                          icon: Icon(
+                            _obscureText
+                                ? Icons.visibility_off
+                                : Icons.visibility,
+                            color: Color.fromARGB(255, 238, 109, 45),
+                          ),
+                          onPressed: () {
+                            setState(() {
+                              _obscureText = !_obscureText;
+                            });
+                          },
+                        ),
                       ),
                     ),
                     SizedBox(height: 16),
