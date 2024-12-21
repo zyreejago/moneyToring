@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:money_toring/features/login/input_nama_toko.dart';
 import 'package:money_toring/features/login/login_register_screen.dart';
 
 void main() {
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: LoginRegisterScreen(),
+      home: InputNamaTokoScreen(),
     );
   }
 }
